@@ -49,6 +49,7 @@ const Pagination = {
       swiper.pagination.bullets &&
       swiper.pagination.bullets.length > 0
     ) {
+      swiper.pagination.bullets = $el.find(classesToSelector(params.bulletClass));
       const bullets = swiper.pagination.bullets;
       let firstIndex;
       let lastIndex;

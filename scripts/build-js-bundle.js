@@ -7,6 +7,7 @@ const { default: babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
 const { default: resolve } = require('@rollup/plugin-node-resolve');
 const Terser = require('terser');
+const commonjs = require('@rollup/plugin-commonjs');
 
 const config = require('./build-config');
 const banner = require('./banner')();
@@ -40,6 +41,7 @@ async function buildBundle(components, format, browser, cb) {
           format === 'umd' ? 'export default Swiper;' : 'export default Swiper; export { Swiper }',
       }),
       resolve({ mainFields: ['module', 'main', 'jsnext'] }),
+      commonjs(),
       babel({ babelHelpers: 'bundled' }),
     ],
     onwarn() {},

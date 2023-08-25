@@ -1,3 +1,7 @@
+Add IE 10 compatibility on swiper 6.8.4
+
+---
+
 <p align="center">
   <img src="https://swiperjs.com/images/share-banner.png"/>
 </p>
