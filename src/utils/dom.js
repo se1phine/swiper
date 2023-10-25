@@ -62,8 +62,16 @@ const Methods = {
   is,
   index,
   eq,
-  append,
-  prepend,
+  append($node) {
+    const html = $($node)[0].outerHTML;
+    const node = $(html)[0];
+    return append.call(this, node);
+  },
+  prepend($node) {
+    const html = $($node)[0].outerHTML;
+    const node = $(html)[0];
+    return prepend.call(this, node);
+  },
   next,
   nextAll,
   prev,

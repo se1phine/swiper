@@ -136,11 +136,7 @@ const A11y = {
   init() {
     const swiper = this;
     const params = swiper.params.a11y;
-    try {
-      swiper.$el.append(swiper.a11y.liveRegion);
-    } catch (e) {
-      console.log(e);
-    }
+    swiper.$el.append(swiper.a11y.liveRegion);
 
     // Container
     const $containerEl = swiper.$el;
